@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yo y ella</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        header {
+            background-image: url('https://i.ytimg.com/vi/ieOHi5e4d_s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCZWSShHe8y4LeMHAciJ-pB23NlUw'); /* Cambia con tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 50px 10px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-top: -50px;
+            z-index: 10;
+        }
+
+        .intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #FF61A6;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 900px;
+            margin: 20px auto;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin: 50px 0;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 15px;
+            transition: transform 0.5s ease, filter 0.5s ease;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 15px;
+        }
+
+        .overlay.active {
+            display: flex;
+        }
+
+        footer {
+            background-color: #FF61A6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Yo y Ella</h1>
+    <p>La amo muxito.</p>
+</header>
+
+<section class="intro">
+    <h2>fotitos</h2>
+    <p>Fotos donde somos nosotros 2 :3</p>
+</section>
+
+<div class="gallery">
+    <img src="images/ekko and powder.jpg" alt="Nuestro primer viaje juntos" onclick="openImage(this)">
+    <img src="images/cats2.jpeg" alt="besito" onclick="openImage(this)">
+    <img src="images/cats4.jpeg" alt="Cena a la luz de las velas" onclick="openImage(this)">
+    <img src="images/mine.jpeg" alt="minecraft" onclick="openImage(this)">
+    <img src="images/wa.jpeg" alt="Sonrisas bajo la lluvia" onclick="openImage(this)">
+    <img src="images/lol.jpeg" alt="Un atardecer perfecto" onclick="openImage(this)">
+</div>
+
+<div class="overlay" id="overlay">
+    <img id="overlayImage" src="" alt="Imagen ampliada">
+</div>
+
+<footer>
+    <p>Te amoooo muxito limda💗</p>
+</footer>
+
+<script>
+    function openImage(img) {
+        var overlay = document.getElementById('overlay');
+        var overlayImage = document.getElementById('overlayImage');
+        overlayImage.src = img.src;
+        overlay.classList.add('active');
+    }
+
+    document.getElementById('overlay').addEventListener('click', function() {
+        this.classList.remove('active');
+    });
+</script>
+
+</body>
+</html>
